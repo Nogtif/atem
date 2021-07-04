@@ -1,30 +1,22 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app">
+    <Loading v-if="showLoading"/>
+    <router-view v-else/>
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
+<script>
+import Loading from '@/components/Loading.vue';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  components: { Loading },
+  data() {
+    return {
+      showLoading: false,
     }
-  }
+  },
 }
-</style>
+</script>
+<style lang="scss" src="./style/icons.min.scss"></style>
+<style lang="scss" src="./style/global.scss"></style>
