@@ -18,5 +18,4 @@ export default {
   },
 }
 </script>
-<style lang="scss" src="./style/icons.min.scss"></style>
 <style lang="scss" src="./style/global.scss"></style>
