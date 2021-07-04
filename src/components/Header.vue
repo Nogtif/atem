@@ -90,7 +90,7 @@ label.jm-menu-btn {
     margin-left: 20px;
     line-height: 50px;
     font-size: 25px;
-    opacity: .7;
+    opacity: .8;
 }
 
 label.jm-menu-btn:hover {
@@ -176,7 +176,8 @@ li:hover .jm-icon-dropdown {
 }
 
 .jm-icon-menu::before {
-    content: '\2630';
+    content: '\F035C';
+    font-family: "Material Design Icons";
 }
 
 @media (max-width: 993px) {
@@ -237,8 +238,9 @@ li:hover .jm-icon-dropdown {
 }
 
 li.jm-dropdown>a:after {
-    content: ' \F140';
+    content: '\F0140';
     font-family: "Material Design Icons";
+    margin-left: 5px;
 }
 
 li.jm-dropdown>a:only-child:after {
