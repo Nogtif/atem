@@ -2,13 +2,17 @@
   "name": "atem-project",
   "version": "0.1.0",
   "private": true,
+  "author": "Sowtch",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "client": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "server": "nodemon server/app.js --exec  \"npm run lint && node\""
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "swiper": "*",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
