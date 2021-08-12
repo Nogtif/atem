@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,600");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import './variables.scss';
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 8px;
@@ -51,7 +54,7 @@ html {
 }
 
 body {
-  background-color: #151618;
+  background-color: $bg-primary;
   font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #9099A4;
   -webkit-font-smoothing: antialiased;
@@ -125,34 +128,37 @@ a {
   background: #4F9ED3
 }
 
+// Button
 .btn {
-  font-weight: 600;
-  padding: 10px 17px;
-  font-family: sans-serif;
+  font-family: poppins,sans-serif;
+  font-weight: 700;
+  padding: 12px 17px;
   color: #FFF;
-  font-size: 14px;
-  border-radius: 5rem;
+  text-transform: uppercase;
+  font-size: .85rem;
+  border-radius: .25rem;
+  cursor: pointer;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
 
 .btn-primary {
   color: #FFF;
-  background-color: #4F9ED3;
+  background-color: #4B76AD;
 }
 
 .btn-primary:hover {
   color: #FFF;
-  background-color: #2e79aa;
+  background-color: #446C9D;
 }
 
 .btn-primary:focus {
   color: #FFF;
-  -webkit-box-shadow: 0 0 0 .2rem rgba(46, 121, 170, 0.5);
-  box-shadow: 0 0 0 .2rem rgba(46, 121, 170, 0.5)
+  -webkit-box-shadow: 0 0 0 .2rem rgba(75, 118, 173, 0.5);
+  box-shadow: 0 0 0 .2rem rgba(75, 118, 173, 0.5);
 }
 
 .btn-primary:disabled {
-  color: color-yiq(#4F9ED3);
-  background-color: #4F9ED3;
+  color: color-yiq(#4B76AD);
+  background-color: #4B76AD;
 }

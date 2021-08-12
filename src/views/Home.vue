@@ -1,11 +1,10 @@
 <template>
-  <div class="container">
+  <div class="home">
     <Header />
     <section>
-      <div class="heading-title">
-        <h1>Les plus populaires</h1>
+      <div class="container">
+        <SwiperCarousel />
       </div>
-      <SwiperCarousel />
     </section>
   </div>
 </template>

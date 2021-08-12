@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Loading v-if="showLoading"/>
+    <Loading ref="loading" v-if="showLoading" @endAnim="showLoading = false"/>
     <router-view v-else/>
   </div>
 </template>
@@ -13,9 +13,14 @@ export default {
   components: { Loading },
   data() {
     return {
-      showLoading: false,
+      showLoading: true,
     }
   },
+  created() {
+    setTimeout(() => {
+      this.$refs.loading.fadeOut();
+    }, 500);
+  }
 }
 </script>
 <style lang="scss" src="./assets/fonts/MaterialDesign-Webfont-master/scss/materialdesignicons.scss"></style>
