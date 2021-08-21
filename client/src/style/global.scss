@@ -87,7 +87,8 @@ a {
 .container {
   padding: 0 10%;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
+  max-width: 1400px;
 }
 
 @media (min-width:768px) {
@@ -102,30 +103,30 @@ a {
   }
 }
 
-.heading-title {
+.heading_title {
   width: 100%;
   display: inline-block;
   margin-bottom: 10px;
-}
 
-.heading-title h1 {
-  font-size: 18px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-  text-transform: capitalize;
-}
+  h1 {
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: capitalize;
 
-.heading-title h1:after {
-  width: 80%;
-  height: 3px;
-  content: "";
-  position: absolute !important;
-  bottom: 0;
-  left: 0%;
-  text-align: center;
-  z-index: 0;
-  background: #4F9ED3
+    &:after {
+      width: 80%;
+      height: 3px;
+      content: "";
+      position: absolute !important;
+      bottom: 0;
+      left: 0%;
+      text-align: center;
+      z-index: 0;
+      background: $color-primary
+    }
+  }
 }
 
 // Button
@@ -142,23 +143,23 @@ a {
   transition: all 0.15s ease-in-out;
 }
 
-.btn-primary {
+.btn_primary {
   color: #FFF;
   background-color: #4B76AD;
-}
 
-.btn-primary:hover {
-  color: #FFF;
-  background-color: #446C9D;
-}
+  &:hover {
+    color: #FFF;
+    background-color: #446C9D;
+  }
 
-.btn-primary:focus {
-  color: #FFF;
-  -webkit-box-shadow: 0 0 0 .2rem rgba(75, 118, 173, 0.5);
-  box-shadow: 0 0 0 .2rem rgba(75, 118, 173, 0.5);
-}
+  &:focus {
+    color: #FFF;
+    -webkit-box-shadow: 0 0 0 .2rem rgba(75, 118, 173, 0.5);
+    box-shadow: 0 0 0 .2rem rgba(75, 118, 173, 0.5);
+  }
 
-.btn-primary:disabled {
-  color: color-yiq(#4B76AD);
-  background-color: #4B76AD;
+  &:disabled {
+    color: color-yiq(#4B76AD);
+    background-color: #4B76AD;
+  }
 }

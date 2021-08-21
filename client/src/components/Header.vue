@@ -27,6 +27,9 @@
               <li class="nav_item">
                 <a>Films</a>
               </li>
+              <li class="nav_item">
+                <a>Calendrier</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -36,7 +39,7 @@
             <i class="mdi mdi-magnify"></i>
           </a>
           <div>
-            <a href="./login" class="btn btn-primary">Connexion</a>
+            <a href="./login" class="btn btn_primary">Connexion</a>
           </div>
         </div>
       </nav>
