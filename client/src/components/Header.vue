@@ -36,7 +36,8 @@
 
         <div class="tool_bar">
           <form @submit.prevent="searchAnimes" class="icon_action">
-            <input id="search" type="text" v-model="query">
+            <input id="search" type="text" v-model="query" autocomplete="off">
+            <i class="mdi mdi-magnify" aria-hidden="true"></i>
           </form>
           <div>
             <a class="btn btn_primary">Connexion</a>
@@ -327,11 +328,12 @@ export default {
       align-items: center;
 
       form {
+        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         
-        input {
+        input[type="text"] {
           background-color: rgba($color: #fff, $alpha: .2);
           height: 25px;
           border: 2px solid rgba($color: #fff, $alpha: .3);
@@ -340,6 +342,7 @@ export default {
           margin-right: .25em;
           font-size: .85em;
           padding: .10rem .5rem;
+          padding-left: 1.9rem;
           max-width: 125px;
           color: rgba($color: #fff, $alpha: .9);
           @include transition(all .5s ease-out 0s);
@@ -349,10 +352,20 @@ export default {
             max-width: 200px;
           }
         }
+
         @media (max-width: 1201px) {
-          input {
+          input[type="text"] {
             display: none;
           }
+        }
+
+        i {
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 6px 8px;
+          color: rgba($color: #fff, $alpha: .9);
+          transition: 0.3s;
         }
       }
       
