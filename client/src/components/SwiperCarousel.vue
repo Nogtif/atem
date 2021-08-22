@@ -12,7 +12,7 @@
         <div class="swiper_slide">
           <div class="card">
             <div class="card_img">
-              <img :src="require(`../assets/img/anime/thumbnails/${anime.thumbnail}`)" alt="">
+              <img :src="require(`../assets/img/animes/thumbnails/${anime.thumbnail}`)" alt="">
               <div class="overlay">
                 <div class="ms_box_overlay"></div>
                 <div class="play_icon">
