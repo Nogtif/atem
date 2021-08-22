@@ -35,14 +35,11 @@
         </div>
 
         <div class="tool_bar">
-          <a href="https://discord.com" class="icon_action">
-            <i class="mdi mdi-discord"></i>
-          </a>
+          <form @submit.prevent="searchAnimes" class="icon_action">
+            <input id="search" type="text" v-model="query">
+          </form>
           <div>
-            <form @submit.prevent="searchAnimes">
-              <input id="search" type="text" v-model="query">
-              <button class="btn btn_search btn_primary"><i class="mdi mdi-magnify"></i></button>
-            </form>
+            <a class="btn btn_primary">Connexion</a>
           </div>
         </div>
       </nav>
@@ -336,26 +333,29 @@ export default {
         
         input {
           background-color: rgba($color: #fff, $alpha: .2);
-          height: 31px;
+          height: 25px;
           border: 2px solid rgba($color: #fff, $alpha: .3);
-          border-radius: .3rem 0 0 .3rem;
+          border-radius: .25rem;
           outline: none;
           margin-right: .25em;
-          font-size: 1em;
+          font-size: .85em;
           padding: .10rem .5rem;
-          max-width: 150px;
-          color: #fff;
-          @include transition(all .3s ease-out 0s);
+          max-width: 125px;
+          color: rgba($color: #fff, $alpha: .9);
+          @include transition(all .5s ease-out 0s);
 
           &:focus {
             border-color: rgba($color: #fff, $alpha: .5);
+            max-width: 200px;
           }
         }
-
-        button {
-          border: none;
+        @media (max-width: 1201px) {
+          input {
+            display: none;
+          }
         }
       }
+      
 
       .btn_search {
         padding: 0;
