@@ -44,7 +44,7 @@ import "swiper/swiper.scss";
 SwiperCore.use([Navigation]);
 
 export default {
-  name: 'SwiperCarousel',
+  name: 'SwiperAnimes',
   components: {
     Swiper,
     SwiperSlide,
@@ -55,9 +55,10 @@ export default {
         navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
         breakpoints: {
           320: { slidesPerView: 2, spaceBetween: 10 },
-          571: { slidesPerView: 4, spaceBetween: 30 },
-          730: { slidesPerView: 5, spaceBetween: 30 },
-          991: { slidesPerView: 6, spaceBetween: 30 }
+          600: { slidesPerView: 3, spaceBetween: 30 },
+          771: { slidesPerView: 4, spaceBetween: 30 },
+          900: { slidesPerView: 5, spaceBetween: 30 },
+          1500: { slidesPerView: 6, spaceBetween: 30 }
         }
       },
     }

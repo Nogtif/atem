@@ -10,8 +10,8 @@
             Atem<span>CMS</span>
           </a>
           <div class="menu">
-            <label htmlFor="btn-menu" class="btn_menu"></label>
-            <input type="checkbox" id="btn-menu" class="btn_menu" />
+            <label for="menu" class="btn_menu"><i class="mdi mdi-menu"></i></label>
+            <input type="checkbox" id="menu" class="btn_menu" />
             <ul class="navigation">
               <li class="nav_item">
                 <a>Communauté</a>
@@ -35,11 +35,14 @@
         </div>
 
         <div class="tool_bar">
-          <a class="icon_action">
-            <i class="mdi mdi-magnify"></i>
+          <a href="https://discord.com" class="icon_action">
+            <i class="mdi mdi-discord"></i>
           </a>
           <div>
-            <a href="./login" class="btn btn_primary">Connexion</a>
+            <form @submit.prevent="searchAnimes">
+              <input id="search" type="text" v-model="query">
+              <button class="btn btn_search btn_primary"><i class="mdi mdi-magnify"></i></button>
+            </form>
           </div>
         </div>
       </nav>
@@ -49,7 +52,12 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data() {
+    return {
+      query: ''
+    }
+  }
 }
 </script>
 
@@ -98,7 +106,7 @@ export default {
       display: flex;
       align-items: center;
       font-size: 2rem;
-      opacity: .9;
+      opacity: 1;
       @include transition(all .3s ease-out 0s);
 
       &:hover {
@@ -119,8 +127,9 @@ export default {
         color: #fff;
         cursor: pointer;
         display: flex;
-        margin-left: 1.6em;
-        opacity: .8;
+        font-size: 1.8em;
+        margin-left: 1em;
+        opacity: .95;
 
         &:hover {
           opacity: 1;
@@ -320,6 +329,47 @@ export default {
       justify-content: space-between;
       align-items: center;
 
+      form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        input {
+          background-color: rgba($color: #fff, $alpha: .2);
+          height: 31px;
+          border: 2px solid rgba($color: #fff, $alpha: .3);
+          border-radius: .3rem 0 0 .3rem;
+          outline: none;
+          margin-right: .25em;
+          font-size: 1em;
+          padding: .10rem .5rem;
+          max-width: 150px;
+          color: #fff;
+          @include transition(all .3s ease-out 0s);
+
+          &:focus {
+            border-color: rgba($color: #fff, $alpha: .5);
+          }
+        }
+
+        button {
+          border: none;
+        }
+      }
+
+      .btn_search {
+        padding: 0;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        justify-content: center;
+        line-height: 1.33;
+        border: 2px solid $color-primary;
+        border-radius: 0 .3rem .3rem 0;
+      }
+
       .icon_action {
         position: relative;
         color: rgba($color: #fff, $alpha: .85);
@@ -329,7 +379,7 @@ export default {
         cursor: pointer;
 
         i {
-          font-size: 1.1rem;
+          font-size: 1.25rem;
         }
 
         &::after {

@@ -132,6 +132,7 @@ a {
 
 // Button
 .btn {
+  position: relative;
   font-family: poppins,sans-serif;
   font-weight: 700;
   padding: 12px 17px;
@@ -147,10 +148,12 @@ a {
 .btn_primary {
   color: #FFF;
   background-color: #4B76AD;
+  border-color: #4B76AD;
 
   &:hover {
     color: #FFF;
     background-color: #446C9D;
+    border-color: #446C9D;
   }
 
   &:focus {
@@ -162,5 +165,6 @@ a {
   &:disabled {
     color: color-yiq(#4B76AD);
     background-color: #4B76AD;
+    border-color: #4B76AD;
   }
 }
