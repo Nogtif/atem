@@ -7,7 +7,7 @@
       <nav class="navbar">
         <div class="nav_side">
           <a href="./" class="logo">
-            <img src="../assets/img/logo.png" alt="logo">
+            Atem<span>CMS</span>
           </a>
           <div class="menu">
             <label htmlFor="btn-menu" class="btn_menu"></label>
@@ -22,7 +22,7 @@
                 </ul>
               </li>
               <li class="nav_item">
-                <a>Animes</a>
+                <a>Mangas</a>
               </li>
               <li class="nav_item">
                 <a>Films</a>
@@ -94,9 +94,10 @@ export default {
     }
 
     .logo {
+      font-family: 'Luckiest Guy', cursive;
       display: flex;
       align-items: center;
-      font-size: 1.25rem;
+      font-size: 2rem;
       opacity: .9;
       @include transition(all .3s ease-out 0s);
 
@@ -104,10 +105,8 @@ export default {
         opacity: 1;
       }
 
-      img {
-        vertical-align: middle;
-        border-style: none;
-        height: 50px;
+      span {
+        color: $color-primary;
       }
     }
 

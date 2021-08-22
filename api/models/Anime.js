@@ -13,7 +13,9 @@ const animeSchema = new mongoose.Schema({
   kind: { type: Array },
   duration: { type: Number, default: 0 },
   initialExit: { type: Date, default: Date.now },
-  studios: { type: String, default: '' }
+  studios: { type: String, default: '' },
+  rating: { type: Number, default: 0 },
+  views: { type: Number, default: 0 }
 }, { versionKey: false });
 
 module.exports = mongoose.model('Anime', animeSchema);

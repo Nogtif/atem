@@ -7,6 +7,7 @@
 
 
 <script>
+import { mapActions } from 'vuex'
 import Loading from '@/components/Loading.vue';
 
 export default {
@@ -16,11 +17,17 @@ export default {
       showLoading: true,
     }
   },
+  computed: {
+    ...mapActions({
+      fetchAnimes: 'animes/fetchAnimes',
+    })
+  },
   created() {
+    this.fetchAnimes;
     setTimeout(() => {
       this.$refs.loading.fadeOut();
     }, 500);
-  }
+  },
 }
 </script>
 <style lang="scss" src="./assets/fonts/MaterialDesign-Webfont-master/scss/materialdesignicons.scss"></style>
