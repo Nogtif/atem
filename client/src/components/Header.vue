@@ -22,7 +22,7 @@
                 </ul>
               </li>
               <li class="nav_item">
-                <a>Mangas</a>
+                <a>Animes</a>
               </li>
               <li class="nav_item">
                 <a>Films</a>
@@ -40,7 +40,7 @@
             <i class="mdi mdi-magnify" aria-hidden="true"></i>
           </form>
           <div>
-            <a class="btn btn_primary">Connexion</a>
+            <a href="" class="btn btn_primary">Connexion</a>
           </div>
         </div>
       </nav>
@@ -54,6 +54,11 @@ export default {
   data() {
     return {
       query: ''
+    }
+  },
+  methods: {
+    searchAnimes() {
+      return null;
     }
   }
 }

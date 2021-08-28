@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="card_text">
-              <h3><a href="#">{{ anime.title }}</a></h3>
+              <h3><router-link :to="`/animes/${anime._id}`">{{ anime.title }}</router-link></h3>
               <div class="rating">
                 <i v-for="star in 5" :key="star" :class="['mdi', nbOfStars(anime.rating) < star ? 'mdi-star-outline' : 'mdi-star']"></i>
                 <span>{{ Math.round((anime.rating / 20) * 10) / 10 }}</span>

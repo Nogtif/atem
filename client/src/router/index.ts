@@ -1,23 +1,36 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "../views/Home.vue";
-import Error from "../views/Error.vue";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import Home from '../views/Home.vue';
+import Error from '../views/Error.vue';
+import Animes from '../views/Animes.vue';
+import Anime from '../views/Anime.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
     meta: {
-      title: "Accueil",
+      title: 'Accueil',
     },
   },
   {
-    path: "/:catchAll(.*)",
-    name: "Error",
+    path: '/:catchAll(.*)',
+    name: 'Error',
     component: Error,
     meta: {
-      title: "Page introuvable",
+      title: 'Page introuvable',
     },
+  },
+  {
+    path: '/animes',
+    name: 'animes',
+    component: Animes,
+  },
+
+  {
+    path: '/animes/:title',
+    name: 'anime',
+    component: Anime,
   },
 ];
 

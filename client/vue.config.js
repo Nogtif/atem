@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: './',
+  publicPath: '/',
   devServer: {
     host: 'localhost',
     public: 'localhost:8081',

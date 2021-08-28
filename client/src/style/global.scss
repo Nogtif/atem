@@ -147,8 +147,8 @@ a {
 
 .btn_primary {
   color: #FFF;
-  background-color: #4B76AD;
-  border-color: #4B76AD;
+  background-color: $color-primary;
+  border-color: $color-primary;
 
   &:hover {
     color: #FFF;
@@ -163,8 +163,8 @@ a {
   }
 
   &:disabled {
-    color: color-yiq(#4B76AD);
-    background-color: #4B76AD;
-    border-color: #4B76AD;
+    color: color-yiq($color-primary);
+    background-color: $color-primary;
+    border-color: $color-primary;
   }
 }
