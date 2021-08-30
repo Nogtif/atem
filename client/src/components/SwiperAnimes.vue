@@ -8,23 +8,23 @@
       :breakpoints="swiperOptions.breakpoints"
       :options="swiperOptions"
     >
-      <swiper-slide v-for="anime in animes" :key="anime.title">
+      <swiper-slide v-for="manga in mangas" :key="manga.title">
         <div class="swiper_slide">
           <div class="card">
             <div class="card_img">
-              <img :src="require(`../assets/img/animes/thumbnails/${anime.thumbnail}`)" alt="">
+              <img :src="loadThumbnail(manga.thumbnail)" :alt="manga.title">
               <div class="overlay">
                 <div class="ms_box_overlay"></div>
                 <div class="play_icon">
-                  <img src="../assets/img/svg/play.svg" alt="">
+                  <img src="@/assets/img/svg/play.svg" alt="">
                 </div>
               </div>
             </div>
             <div class="card_text">
-              <h3><router-link :to="`/animes/${anime._id}`">{{ anime.title }}</router-link></h3>
+              <h3><router-link :to="{ name: `Manga`, params: { id: manga._id } }">{{ manga.title }}</router-link></h3>
               <div class="rating">
-                <i v-for="star in 5" :key="star" :class="['mdi', nbOfStars(anime.rating) < star ? 'mdi-star-outline' : 'mdi-star']"></i>
-                <span>{{ Math.round((anime.rating / 20) * 10) / 10 }}</span>
+                <i v-for="star in 5" :key="star" :class="['mdi', nbOfStars(manga.rating) < star ? 'mdi-star-outline' : 'mdi-star']"></i>
+                <span>{{ Math.round((manga.rating / 20) * 10) / 10 }}</span>
               </div>
             </div>
           </div>
@@ -37,7 +37,8 @@
 </template>
 <script>
 // import Swiper core and required components
-import { mapState, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
+import { loadThumbnail } from "@/utils/image";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper.scss";
@@ -64,11 +65,12 @@ export default {
     }
   },  
   computed: {
-    ...mapGetters('animes', {
-      animes: 'listOfAnimes'
+    ...mapGetters('mangas', {
+      mangas: 'listOfMangas'
     })
   },
   methods: {
+    loadThumbnail,
     nbOfStars(rating) {
       return Math.floor(rating / 20)
     }

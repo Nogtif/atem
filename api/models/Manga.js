@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const animeSchema = new mongoose.Schema({
+const mangaSchema = new mongoose.Schema({
   title: { type: String, required: true },
   originalTitle: { type: String, default: '' },
   synopsis: { type: String, default: '' },
@@ -18,4 +18,4 @@ const animeSchema = new mongoose.Schema({
   views: { type: Number, default: 0 }
 }, { versionKey: false });
 
-module.exports = mongoose.model('Anime', animeSchema);
+module.exports = mongoose.model('Manga', mangaSchema);

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import Error from '../views/Error.vue';
-import Animes from '../views/Animes.vue';
-import Anime from '../views/Anime.vue';
+import Mangas from '../views/Mangas.vue';
+import MangaPage from '../views/MangaPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,15 +22,15 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: '/animes',
-    name: 'animes',
-    component: Animes,
+    path: '/mangas',
+    name: 'Mangas',
+    component: Mangas,
   },
 
   {
-    path: '/animes/:title',
-    name: 'anime',
-    component: Anime,
+    path: '/mangas/:id',
+    name: 'Manga',
+    component: MangaPage
   },
 ];
 
@@ -40,7 +40,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `Atem | ${to.meta.title}`;
+  document.title = `Atem | ${to.meta.title || 'Accueil' }`;
   next();
 });
 
