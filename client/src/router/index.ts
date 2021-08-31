@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import Error from '../views/Error.vue';
-import Mangas from '../views/Mangas.vue';
-import MangaPage from '../views/MangaPage.vue';
+import Animes from '../views/Animes.vue';
+import AnimePage from '../views/AnimePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,15 +22,15 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: '/mangas',
-    name: 'Mangas',
-    component: Mangas,
+    path: '/animes',
+    name: 'Animes',
+    component: Animes,
   },
 
   {
-    path: '/mangas/:id',
-    name: 'Manga',
-    component: MangaPage
+    path: '/animes/:id',
+    name: 'Anime',
+    component: AnimePage
   },
 ];
 

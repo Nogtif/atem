@@ -22,7 +22,7 @@
                 </ul>
               </li>
               <li class="nav_item">
-                <a>Mangas</a>
+                <a>Animes</a>
               </li>
               <li class="nav_item">
                 <a>Calendrier</a>

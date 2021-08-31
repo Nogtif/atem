@@ -1,11 +1,11 @@
 import { createStore } from 'vuex'
-import mangas from "./modules/mangas";
+import animes from "./modules/animes";
 
 export default createStore({
   state: {},
   mutations: {},
   actions: {},
   modules: {
-    mangas,
+    animes,
   },
 });

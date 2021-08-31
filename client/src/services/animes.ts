@@ -7,6 +7,6 @@ export interface Manga {
   thumbnails: string;
 }
 
-export function getMangas() {
-  return api.get("/mangas");
+export function getAnimes() {
+  return api.get("/animes");
 }
