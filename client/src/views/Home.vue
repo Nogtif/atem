@@ -3,7 +3,7 @@
     <Header />
     <div class="container">
       <section class="swiperTop">
-        <SwiperAnimes />
+        <Swiper />
       </section>
 
       <section class="page_content">
@@ -17,13 +17,13 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import SwiperAnimes from "@/components/SwiperAnimes.vue";
+import Swiper from "@/components/Swiper.vue";
 
 export default {
   name: 'Home',
   components: { 
     Header,
-    SwiperAnimes
+    Swiper
   }
 }
 </script>

@@ -1,19 +1,19 @@
 {
   "name": "atem-project",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Sowtch",
   "scripts": {
-    "client": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@mdi/js": "^5.9.55",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "core-js": "^3.6.5",
-    "mdi-vue": "^3.0.7",
-    "swiper": "*",
+    "sass": "^1.39.2",
+    "sass-loader": "^10",
+    "swiper": "6.4.6",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
@@ -32,8 +32,8 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
     "typescript": "~4.1.5"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import Error from '../views/Error.vue';
-import Animes from '../views/Animes.vue';
-import AnimePage from '../views/AnimePage.vue';
+import Animes from '../views/AnimesList.vue';
+import AnimePage from '../views/Anime.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,7 +26,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Animes',
     component: Animes,
   },
-
   {
     path: '/animes/:id',
     name: 'Anime',

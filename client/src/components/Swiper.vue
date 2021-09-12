@@ -35,6 +35,7 @@
     <div class="swiper-button-next slider_nav_next"></div>
   </div>
 </template>
+
 <script>
 import { mapGetters } from 'vuex'
 import { loadThumbnail } from "@/utils/image";
@@ -43,6 +44,8 @@ import { loadThumbnail } from "@/utils/image";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper.scss";
+
+// install swiper components
 SwiperCore.use([Navigation]);
 
 export default {
@@ -78,4 +81,4 @@ export default {
   }
 }
 </script>
-<style lang="scss" src="../style/swiper.scss"></style>
+<style lang="scss" src="../styles/swiper.scss"></style>

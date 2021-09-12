@@ -31,4 +31,4 @@ export default {
 }
 </script>
 <style lang="scss" src="./assets/fonts/MaterialDesign-Webfont-master/scss/materialdesignicons.scss"></style>
-<style lang="scss" src="./style/global.scss"></style>
+<style lang="scss" src="./styles/global.scss"></style>
