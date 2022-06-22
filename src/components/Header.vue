@@ -33,7 +33,7 @@
 
         <div class="tool_bar">
           <form @submit.prevent="searchAnimes" class="icon_action">
-            <input id="search" type="text" v-model="query" autocomplete="off">
+            <input placeholder="Search..." type="text" v-model="query" autocomplete="off">
             <i class="mdi mdi-magnify" aria-hidden="true"></i>
           </form>
           <div>
