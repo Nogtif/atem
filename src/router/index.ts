@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home/Home';
+import Error from '../views/Error/Error';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -10,6 +11,14 @@ const router = createRouter({
       component: Home,
       meta: {
         title: 'Accueil',
+      },
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'Error',
+      component: Error,
+      meta: {
+        title: 'Page introuvable',
       },
     }
   ]
