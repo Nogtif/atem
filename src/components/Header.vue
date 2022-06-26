@@ -22,7 +22,7 @@
                 </ul>
               </li>
               <li class="nav_item">
-                <a>Animes</a>
+                <a>Mangas</a>
               </li>
               <li class="nav_item">
                 <a>Calendrier</a>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="tool_bar">
-          <form @submit.prevent="searchAnimes" class="icon_action">
+          <form @submit.prevent="searchMangas" class="icon_action">
             <input placeholder="Search..." type="text" v-model="query" autocomplete="off">
             <i class="mdi mdi-magnify" aria-hidden="true"></i>
           </form>
@@ -54,7 +54,7 @@ export default {
     }
   },
   methods: {
-    searchAnimes() {
+    searchMangas() {
       return null;
     }
   }

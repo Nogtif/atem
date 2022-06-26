@@ -19,14 +19,14 @@ export default {
   },
   computed: {
     ...mapActions({
-      fetchAnimes: 'animes/fetchAnimes',
+      fetchMangas: 'mangas/fetchMangas',
     })
   },
   created() {
-    this.fetchAnimes;
+    this.fetchMangas;
     setTimeout(() => {
       this.$refs.loading.fadeOut();
-    }, 5000);
+    }, 0);
   },
 }
 </script>

@@ -1,7 +1,7 @@
 export function loadThumbnail(src) {
   try  {
-    return require(`@/assets/img/animes/thumbnails/${src}`)
+    return require(`@/assets/img/mangas/thumbnails/${src}`)
   } catch (err) {
-    return require('@/assets/img/animes/thumbnails/default.png')
+    return require('@/assets/img/mangas/thumbnails/default.png')
   }
 }
