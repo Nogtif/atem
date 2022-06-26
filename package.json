@@ -2,38 +2,29 @@
   "name": "atem-project",
   "version": "1.0.0",
   "private": true,
-  "author": "Sowtch",
+  "author": "Nogtif",
+  "keywords": [],
+  "description": "",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "core-js": "^3.6.5",
-    "sass": "^1.39.2",
-    "sass-loader": "^10",
-    "swiper": "6.5.1",
-    "vue": "^3.0.0",
-    "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vue": "^3.2.6",
+    "vue-router": "4.0.16"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "typescript": "~4.1.5"
-  },
-  "keywords": [],
-  "description": ""
+    "@types/node": "^16.7.5",
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vitejs/plugin-vue-jsx": "^1.1.7",
+    "@vue/compiler-sfc": "^3.0.5",
+    "pinia": "^2.0.11",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.1",
+    "typescript": "^4.3.2",
+    "vite": "^2.5.1",
+    "vue-tsc": "^0.2.2"
+  }
 }

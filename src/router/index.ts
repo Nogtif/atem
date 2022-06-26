@@ -1,41 +1,18 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
-import Error from '../views/Error.vue';
-import Mangas from '../views/MangasList.vue';
-import MangaPage from '../views/Manga.vue';
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-    meta: {
-      title: 'Accueil',
-    },
-  },
-  {
-    path: '/:catchAll(.*)',
-    name: 'Error',
-    component: Error,
-    meta: {
-      title: 'Page introuvable',
-    },
-  },
-  {
-    path: '/mangas',
-    name: 'Mangas',
-    component: Mangas,
-  },
-  {
-    path: '/manga/:id',
-    name: 'Manga',
-    component: MangaPage
-  },
-];
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../views/Home/Home';
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home,
+      meta: {
+        title: 'Accueil',
+      },
+    }
+  ]
 });
 
 router.beforeEach((to, from, next) => {
