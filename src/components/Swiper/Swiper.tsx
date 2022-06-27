@@ -1,7 +1,6 @@
 import { defineComponent } from 'vue';
-import { Manga } from '/@/services/mangas';
+import { Anime } from '../../services/animes';
 import { loadThumbnail } from '/@/utils/image';
-
 // import Swiper core and required components
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -26,11 +25,17 @@ export default defineComponent({
       }
     };
 
-    const mangas = [
+    const mangas: Anime[] = [
+      {
+        "reference":"one-piece",
+        "title": "One Piece",
+        "thumbnail":"one-piece.jpg",
+        "rating":100
+      },
       {
         "reference":"solo-leveling",
         "title": "Solo Leveling",
-        "thumbnail":"black-clover.jpg",
+        "thumbnail":"one-piece.jpg",
         "rating":100
       }
     ];
@@ -50,7 +55,7 @@ export default defineComponent({
           options={swiperOptions}
         >
           {
-            mangas.map((manga: Manga) => 
+            mangas.map((manga: Anime) => 
               <swiper-slide>
                 <div class="swiper_slide">
                   <div class="card">
@@ -59,7 +64,7 @@ export default defineComponent({
                       <div class="overlay">
                         <div class="ms_box_overlay" />
                         <div class="play_icon">
-                          <img src="/@/assets/img/svg/play.svg" />
+                          <img src="../../assets/img/svg/play.svg" />
                         </div>
                       </div>
                     </div>

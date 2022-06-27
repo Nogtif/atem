@@ -1,7 +1,7 @@
-export function loadThumbnail(src) {
+export function loadThumbnail(src: string) {
   try  {
-    return`../assets/img/mangas/thumbnails/${src}`
+    return new URL(`../assets/img/animes/thumbnails/${src}`, import.meta.url).href;
   } catch (err) {
-    return '../assets/img/mangas/thumbnails/default.png'
+    return new URL('../assets/img/animes/thumbnails/default.png', import.meta.url).href;
   }
 }

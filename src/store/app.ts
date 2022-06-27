@@ -1,19 +1,19 @@
 import { defineStore } from 'pinia';
-import { type Manga, getMangas } from "../services/mangas";
+import { type Anime, getAnimes } from "../services/animes";
 
 interface AppStoreState {
-  mangas: Manga[];
+  mangas: Anime[];
 }
 
 export const useApp = defineStore('app', {
   // other options...
   state: (): AppStoreState => {
     return {
-      mangas: []
+      animes: []
     }
   },
   actions: {},
   getters: {
-    getMangas: state => state.mangas,
+    getAnimes: state => state.animes,
   }
 })
