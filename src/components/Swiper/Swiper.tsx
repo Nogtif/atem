@@ -1,14 +1,16 @@
 import { defineComponent } from 'vue';
 import { Anime } from '../../services/animes';
 import { loadThumbnail } from '/@/utils/image';
-// import Swiper core and required components
+
+// Swiper core and required components
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper.scss';
+import './Swiper.scss';
 
-import '../../styles/swiper.scss';
+// images
+import playIcon from '/@/assets/img/svg/play.svg';
 
-// install swiper components
 SwiperCore.use([Navigation]);
 
 export default defineComponent({
@@ -64,7 +66,7 @@ export default defineComponent({
                       <div class="overlay">
                         <div class="ms_box_overlay" />
                         <div class="play_icon">
-                          <img src="../../assets/img/svg/play.svg" />
+                          <img src={playIcon} />
                         </div>
                       </div>
                     </div>
