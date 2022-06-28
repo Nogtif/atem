@@ -1,4 +1,6 @@
 import api from './api';
+import { useApp } from '../store/app';
+
 
 export interface Anime {
   reference: string;
@@ -8,5 +10,9 @@ export interface Anime {
 }
 
 export function getAnimes() {
-  return api.get("/animes");
+  api.get("/animes").then((animes: any) => {
+    const app = useApp();
+    app.animes = animes.data
+    return app.animes;
+  });
 }

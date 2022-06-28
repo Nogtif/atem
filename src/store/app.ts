@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { type Anime, getAnimes } from "../services/animes";
 
 interface AppStoreState {
-  mangas: Anime[];
+  animes: Anime[];
 }
 
 export const useApp = defineStore('app', {

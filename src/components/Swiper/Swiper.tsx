@@ -1,15 +1,15 @@
 import { defineComponent } from 'vue';
-import { Anime } from '../../services/animes';
+import { Anime } from '/@/services/animes';
 import { loadThumbnail } from '/@/utils/image';
+
+// images
+import playIcon from '/@/assets/img/svg/play.svg';
 
 // Swiper core and required components
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper.scss';
 import './Swiper.scss';
-
-// images
-import playIcon from '/@/assets/img/svg/play.svg';
 
 SwiperCore.use([Navigation]);
 
@@ -27,7 +27,7 @@ export default defineComponent({
       }
     };
 
-    const mangas: Anime[] = [
+    const animes: Anime[] = [
       {
         "reference":"one-piece",
         "title": "One Piece",
@@ -42,7 +42,7 @@ export default defineComponent({
       }
     ];
 
-    function nbOfStars(rating) {
+    function nbOfStars(rating: number) {
       return Math.floor(rating / 20)
     }
 
@@ -57,12 +57,12 @@ export default defineComponent({
           options={swiperOptions}
         >
           {
-            mangas.map((manga: Anime) => 
+            animes.map((anime: Anime) => 
               <swiper-slide>
                 <div class="swiper_slide">
                   <div class="card">
                     <div class="card_img">
-                      <img src={ loadThumbnail(manga.thumbnail) } alt={ manga.reference } />
+                      <img src={ loadThumbnail(anime.thumbnail) } alt={ anime.reference } />
                       <div class="overlay">
                         <div class="ms_box_overlay" />
                         <div class="play_icon">
@@ -71,9 +71,10 @@ export default defineComponent({
                       </div>
                     </div>
                     <div class="card_text">
-                      <h3>{ manga.title }</h3>
+                      <h3>{ anime.title }</h3>
                       <div class="rating">
-                        <span>{ Math.round((manga.rating / 20) * 10) / 10 }</span>
+                        { [...Array(1,2,3,4,5)].map((star) => <i class={['mdi', nbOfStars(anime.rating) < star ? 'mdi-star-outline' : 'mdi-star']} />) }
+                        <span>{ Math.round((anime.rating / 20) * 10) / 10 }</span>
                       </div>
                     </div>
                   </div>
