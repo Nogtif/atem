@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { type Anime, getAnimes } from "../services/animes";
+import { type Anime } from "/@/services/animes";
 
 interface AppStoreState {
   animes: Anime[];

@@ -4,7 +4,6 @@ import './Header.scss'
 export default defineComponent({
   setup() {
     const query = ref(0);
-    console.log(query)
 
     return () => (
       <>

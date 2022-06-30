@@ -1,4 +1,5 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
+import { useApp } from '/@/store/app';
 import { Anime } from '/@/services/animes';
 import { loadThumbnail } from '/@/utils/image';
 
@@ -16,6 +17,7 @@ SwiperCore.use([Navigation]);
 export default defineComponent({
   components: { Swiper, SwiperSlide },
   setup() {
+    const animes = ref(useApp().animes)
     const swiperOptions = {
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
       breakpoints: {
@@ -26,21 +28,6 @@ export default defineComponent({
         1500: { slidesPerView: 6, spaceBetween: 30 }
       }
     };
-
-    const animes: Anime[] = [
-      {
-        "reference":"one-piece",
-        "title": "One Piece",
-        "thumbnail":"one-piece.jpg",
-        "rating":100
-      },
-      {
-        "reference":"solo-leveling",
-        "title": "Solo Leveling",
-        "thumbnail":"one-piece.jpg",
-        "rating":100
-      }
-    ];
 
     function nbOfStars(rating: number) {
       return Math.floor(rating / 20)
@@ -57,7 +44,7 @@ export default defineComponent({
           options={swiperOptions}
         >
           {
-            animes.map((anime: Anime) => 
+            animes.value.map((anime: Anime) => 
               <swiper-slide>
                 <div class="swiper_slide">
                   <div class="card">

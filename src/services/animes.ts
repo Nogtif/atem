@@ -9,10 +9,10 @@ export interface Anime {
   rating: number;
 }
 
-export function getAnimes() {
-  api.get("/animes").then((animes: any) => {
+export function fetchAnimes(): Promise<Anime[]> {
+  return api.get("/animes").then((animes: any) => {
     const app = useApp();
-    app.animes = animes.data
+    app.animes = animes.data;
     return app.animes;
   });
 }
