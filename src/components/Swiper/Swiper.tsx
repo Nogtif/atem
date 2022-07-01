@@ -17,7 +17,7 @@ SwiperCore.use([Navigation]);
 export default defineComponent({
   components: { Swiper, SwiperSlide },
   setup() {
-    const animes = ref(useApp().animes)
+    const animes = ref(useApp().animes);
     const swiperOptions = {
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
       breakpoints: {
@@ -30,7 +30,7 @@ export default defineComponent({
     };
 
     function nbOfStars(rating: number) {
-      return Math.floor(rating / 20)
+      return Math.floor(rating / 20);
     }
 
     return () => (
@@ -73,6 +73,6 @@ export default defineComponent({
         <div class="swiper-button-prev slider_nav_prev" /> 
         <div class="swiper-button-next slider_nav_next" />
       </div>
-    )
+    );
   }
-})
+});

@@ -20,6 +20,6 @@ export default defineComponent({
         </section>
         </div>
       </>
-    )
+    );
   }
-})
+});

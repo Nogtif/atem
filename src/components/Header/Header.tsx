@@ -1,5 +1,5 @@
 import { ref, defineComponent } from 'vue';
-import './Header.scss'
+import './Header.scss';
 
 export default defineComponent({
   setup() {
@@ -42,6 +42,6 @@ export default defineComponent({
           <div class="gradientWallpaper"></div>
         </div>
       </>
-    )
+    );
   }
-})
+});

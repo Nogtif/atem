@@ -1,7 +1,6 @@
 import api from './api';
 import { useApp } from '../store/app';
 
-
 export interface Anime {
   reference: string;
   title: string;

@@ -13,7 +13,5 @@ export const useApp = defineStore('app', {
     }
   },
   actions: {},
-  getters: {
-    getAnimes: state => state.animes,
-  }
-})
+  getters: {}
+});
