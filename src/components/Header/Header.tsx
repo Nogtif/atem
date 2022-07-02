@@ -16,7 +16,9 @@ export default defineComponent({
                 <input type="checkbox" id="menu" class="btn_menu" />
                 <ul class="navigation">
                   <li class="nav_item">
-                    <a>Communauté</a>
+                    <a>
+                      <i class="mdi mdi mdi-earth" />Communauté
+                    </a>
                     <ul class="dropdown">
                       <li><a href="./news">Actualités</a></li>
                       <li><a href="./news">L'équipe</a></li>
@@ -24,10 +26,14 @@ export default defineComponent({
                     </ul>
                   </li>
                   <li class="nav_item">
-                    <a>Mangas</a>
+                    <a>
+                      <i class="mdi mdi-book-open-variant" />Mangas
+                    </a>
                   </li>
                   <li class="nav_item">
-                    <a>Support</a>
+                    <a>
+                      <i class="mdi mdi-discord" />Discord
+                    </a>
                   </li>
                 </ul>
               </div>

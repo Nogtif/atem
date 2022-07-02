@@ -15,7 +15,7 @@ export default defineComponent({
 
         <section class="page_content">
           <div class="heading_title">
-            <h1>Les dernières sorties</h1>
+            <h1><i class="mdi mdi-diamond-stone"></i>Nos Exclusivités</h1>
           </div>
         </section>
         </div>

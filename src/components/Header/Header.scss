@@ -93,26 +93,32 @@
     
           & > a {
             font-size: .85rem;
-            line-height: 24px;
             font-weight: 700;
-            padding: 20px 0;
+            padding: 20px 1rem 20px 0;
             color: #fff;
             text-transform: uppercase;
             position: relative;
             opacity: .85;
+            display: flex;
+            align-items: center;
             @include transition(all .3s ease-out 0s);
             
             &::before {
               position: absolute;
               content: '';
-              width: 32px;
+              width: 50%;
               height: 4px;
               background: #4B76AD;
               left: 50%;
               margin: 0 2px;
-              bottom: 8px;
+              bottom: 5px;
               @include transform(translate(-50%) scaleX(0));
               @include transition(all .3s ease-out 0s);
+            }
+
+            i {
+              font-size: 1.3em;
+              margin-right: .7em;
             }
           }
     

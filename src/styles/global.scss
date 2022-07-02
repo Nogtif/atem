@@ -110,22 +110,28 @@ a {
   margin-bottom: 10px;
 
   h1 {
-    font-size: 18px;
+    font-size: 1.15em;
     position: relative;
-    display: inline-block;
     padding-bottom: 10px;
     text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
 
     &:after {
       width: 80%;
-      height: 3px;
+      height: 4px;
       content: "";
       position: absolute !important;
-      bottom: 0;
+      bottom: -5px;
       left: 0%;
       text-align: center;
       z-index: 0;
       background: $color-primary
+    }
+
+    i {
+      margin-right: .5rem;
+      font-size: 1.2em;
     }
   }
 }
