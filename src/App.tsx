@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { RouterView } from 'vue-router';
-import { fetchAnimes } from '/@/services/animes';
+import { fetchMangas } from '/@/services/mangas';
 
 // styles
 import './styles/global.scss';
@@ -9,7 +9,7 @@ import './assets/fonts/MaterialDesign-Webfont-master/scss/materialdesignicons.sc
 export default defineComponent({
   setup() {
     const isLoading = ref(true); 
-    fetchAnimes().then(() => isLoading.value = false);
+    fetchMangas().then(() => isLoading.value = false);
 
     return () => (
       <>

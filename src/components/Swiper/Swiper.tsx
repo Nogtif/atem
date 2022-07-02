@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { useApp } from '/@/store/app';
-import { Anime } from '/@/services/animes';
+import { Manga } from '/@/services/mangas';
 import { loadThumbnail } from '/@/utils/image';
 
 // images
@@ -17,7 +17,7 @@ SwiperCore.use([Navigation]);
 export default defineComponent({
   components: { Swiper, SwiperSlide },
   setup() {
-    const animes = ref(useApp().animes);
+    const mangas = ref(useApp().mangas);
     const swiperOptions = {
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
       breakpoints: {
@@ -44,12 +44,12 @@ export default defineComponent({
           options={swiperOptions}
         >
           {
-            animes.value.map((anime: Anime) => 
+            mangas.value.map((manga: Manga) => 
               <swiper-slide>
                 <div class="swiper_slide">
                   <div class="card">
                     <div class="card_img">
-                      <img src={ loadThumbnail(anime.thumbnail) } alt={ anime.reference } />
+                      <img src={ loadThumbnail(manga.thumbnail) } alt={ manga.reference } />
                       <div class="overlay">
                         <div class="ms_box_overlay" />
                         <div class="play_icon">
@@ -58,10 +58,10 @@ export default defineComponent({
                       </div>
                     </div>
                     <div class="card_text">
-                      <h3>{ anime.title }</h3>
+                      <h3>{ manga.title }</h3>
                       <div class="rating">
-                        { [...Array(1,2,3,4,5)].map((star) => <i class={['mdi', nbOfStars(anime.rating) < star ? 'mdi-star-outline' : 'mdi-star']} />) }
-                        <span>{ Math.round((anime.rating / 20) * 10) / 10 }</span>
+                        { [...Array(1,2,3,4,5)].map((star) => <i class={['mdi', nbOfStars(manga.rating) < star ? 'mdi-star-outline' : 'mdi-star']} />) }
+                        <span>{ Math.round((manga.rating / 20) * 10) / 10 }</span>
                       </div>
                     </div>
                   </div>
