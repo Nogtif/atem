@@ -13,5 +13,7 @@ export const useApp = defineStore('app', {
     }
   },
   actions: {},
-  getters: {}
+  getters: {
+    getBest10: (state: any) => state.mangas.sort((a, b) => b.rating - a.rating).slice(0, 9)
+  }
 });

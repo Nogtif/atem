@@ -27,7 +27,7 @@ export default defineComponent({
                   </li>
                   <li class="nav_item">
                     <a>
-                      <i class="mdi mdi-book-open-variant" />Mangas
+                      <i class="mdi mdi-book-open-variant" />Catalogue
                     </a>
                   </li>
                   <li class="nav_item">

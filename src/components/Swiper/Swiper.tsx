@@ -17,7 +17,8 @@ SwiperCore.use([Navigation]);
 export default defineComponent({
   components: { Swiper, SwiperSlide },
   setup() {
-    const mangas = ref(useApp().mangas);
+    const mangas = ref(useApp().getBest10);
+    console.log(mangas)
     const swiperOptions = {
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
       breakpoints: {
