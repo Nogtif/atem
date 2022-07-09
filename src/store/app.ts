@@ -1,19 +1,19 @@
 import { defineStore } from 'pinia';
-import { type Manga } from "/@/services/mangas";
+import { type Anime } from "../services/animes";
 
 interface AppStoreState {
-  mangas: Manga[];
+  animes: Anime[];
 }
 
 export const useApp = defineStore('app', {
   // other options...
   state: (): AppStoreState => {
     return {
-      mangas: []
+      animes: []
     }
   },
   actions: {},
   getters: {
-    getBest10: (state: any) => state.mangas.sort((a, b) => b.rating - a.rating).slice(0, 9)
+    getBest10: (state: any) => state.animes.sort((a, b) => b.rating - a.rating).slice(0, 9)
   }
 });

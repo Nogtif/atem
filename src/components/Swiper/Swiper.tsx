@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { useApp } from '/@/store/app';
-import { Manga } from '/@/services/mangas';
+import { Anime } from '../../services/animes';
 import { loadThumbnail } from '/@/utils/image';
 
 // images
@@ -17,8 +17,7 @@ SwiperCore.use([Navigation]);
 export default defineComponent({
   components: { Swiper, SwiperSlide },
   setup() {
-    const mangas = ref(useApp().getBest10);
-    console.log(mangas)
+    const animes = ref(useApp().getBest10);
     const swiperOptions = {
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
       breakpoints: {
@@ -29,40 +28,41 @@ export default defineComponent({
         1500: { slidesPerView: 6, spaceBetween: 30 }
       }
     };
-
-    function nbOfStars(rating: number) {
-      return Math.floor(rating / 20);
-    }
+    const nbOfStars = (rating: number) => Math.floor(rating / 20);
 
     return () => (
       <div class="swiper-father">
         <swiper
           slides-per-view={1}
           space-between={30}
-          navigation={swiperOptions.navigation}
+          navigation={ swiperOptions.navigation }
           auto-resize={true}
-          breakpoints={swiperOptions.breakpoints}
-          options={swiperOptions}
+          breakpoints={ swiperOptions.breakpoints }
+          options={ swiperOptions }
         >
           {
-            mangas.value.map((manga: Manga) => 
+            animes.value.map((anime: Anime) => 
               <swiper-slide>
                 <div class="swiper_slide">
                   <div class="card">
                     <div class="card_img">
-                      <img src={ loadThumbnail(manga.thumbnail) } alt={ manga.reference } />
+                      <img src={ loadThumbnail(anime.thumbnail) } alt={ anime.reference } />
                       <div class="overlay">
                         <div class="ms_box_overlay" />
                         <div class="play_icon">
-                          <img src={playIcon} />
+                          <img src={ playIcon } />
                         </div>
                       </div>
                     </div>
                     <div class="card_text">
-                      <h3>{ manga.title }</h3>
+                      <h3>{ anime.title }</h3>
                       <div class="rating">
-                        { [...Array(1,2,3,4,5)].map((star) => <i class={['mdi', nbOfStars(manga.rating) < star ? 'mdi-star-outline' : 'mdi-star']} />) }
-                        <span>{ Math.round((manga.rating / 20) * 10) / 10 }</span>
+                        { 
+                          [...Array(5).keys()].map((star) => <i class={
+                            ['mdi', nbOfStars(anime.rating) < star ? 'mdi-star-outline' : 'mdi-star']
+                          } />) 
+                        }
+                        <span>{ Math.round((anime.rating / 20) * 10) / 10 }</span>
                       </div>
                     </div>
                   </div>

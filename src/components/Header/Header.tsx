@@ -26,9 +26,10 @@ export default defineComponent({
                     </ul>
                   </li>
                   <li class="nav_item">
-                    <a>
-                      <i class="mdi mdi-book-open-variant" />Catalogue
-                    </a>
+                    <a><i class="mdi mdi-filmstrip-box" />Films</a>
+                  </li>
+                  <li class="nav_item">
+                    <a><i class="mdi mdi-television-play" />Animes</a>
                   </li>
                   <li class="nav_item">
                     <a>

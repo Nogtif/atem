@@ -1,7 +1,7 @@
 import api from './api';
 import { useApp } from '/@/store/app';
 
-export interface Manga {
+export interface Anime {
   reference: string;
   title: string;
   originalTitle: string;
@@ -18,10 +18,10 @@ export interface Manga {
   seasons: string[];
 }
 
-export function fetchMangas(): Promise<Manga[]> {
-  return api.get("/mangas").then((mangas: any) => {
+export function fetchAnimes(): Promise<Anime[]> {
+  return api.get("/animes").then((animes: any) => {
     const app = useApp();
-    app.mangas = mangas.data;
-    return app.mangas;
+    app.animes = animes.data;
+    return app.animes;
   });
 }
