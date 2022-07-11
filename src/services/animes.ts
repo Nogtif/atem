@@ -5,6 +5,8 @@ export interface Anime {
   reference: string;
   title: string;
   originalTitle: string;
+  initialExit: Date;
+  duration: number;
   synopsis: string;
   type: string;
   status: string;
@@ -19,9 +21,13 @@ export interface Anime {
 }
 
 export function fetchAnimes(): Promise<Anime[]> {
-  return api.get("/animes").then((animes: any) => {
+  return api.get(`/animes`).then(animes => {
     const app = useApp();
     app.animes = animes.data;
     return app.animes;
   });
+}
+
+export function fetchAnime(reference: string): Promise<Anime> {
+  return api.get(`/animes/${reference}`).then(anime => anime.data);
 }

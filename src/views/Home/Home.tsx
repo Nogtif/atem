@@ -1,13 +1,11 @@
 import { defineComponent } from 'vue';
-import Header from '../../components/Header/Header';
-import Swiper from '../../components/Swiper/Swiper';
+import Swiper from '/@/components/Swiper/Swiper';
 
 export default defineComponent({
-  components: { Header, Swiper },
+  components: { Swiper },
   setup() {
     return () => (
       <>
-        <Header />
         <div class="container">
         <section class="swiperTop">
           <Swiper />

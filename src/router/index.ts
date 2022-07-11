@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home/Home';
-import Error from '../views/Error/Error';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -8,15 +6,20 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: Home,
+      component: () => import(`../views/Home/Home`),
       meta: {
         title: 'Accueil',
       },
     },
     {
+      path: '/:id',
+      name: 'Anime',
+      component: () => import(`../views/Anime/Anime`),
+    },
+    {
       path: '/:catchAll(.*)',
       name: 'Error',
-      component: Error,
+      component: () => import(`../views/Error/Error`),
       meta: {
         title: 'Page introuvable',
       },
